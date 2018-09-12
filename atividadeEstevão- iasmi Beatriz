@@ -1,0 +1,80 @@
+import java.util.Scanner;
+
+public class bancobanco {
+   
+     public static void main(String[] args) {
+           
+               Scanner aaa = new Scanner(System.in);
+               bancobanco objeto = new bancobanco();
+               double saldo = 0;
+               while(true){
+                       Menu();
+                       int opcao = aaa.nextInt();
+                       switch(opcao){
+                           case 1:
+                               MostrarSaldo(saldo);
+                               break;
+                           case 2:
+                               saldo=objeto.Sacar(saldo);
+                               break;
+                           case 3:
+                               saldo=objeto.Depositar(saldo);
+                               break;
+                           case 4:
+                               Sair();
+                           default:
+                               System.out.println("Digite uma opção válida");
+                       }
+               }
+       }
+       
+
+    public static void Menu() {
+               System.out.println("Banco SantoAndré");
+               System.out.println("Digite: ");
+               System.out.println("");
+               System.out.println("");
+               System.out.println("1- Ver saldo");
+               System.out.println("2- Sacar");
+               System.out.println("3- Depositar");
+               System.out.println("4- Sair");
+    }
+
+    public static void MostrarSaldo(double saldo) {
+               System.out.println(saldo);
+    }
+
+    public double Sacar(double saldo) {
+                Scanner aaa = new Scanner(System.in);
+               System.out.println("Qual valor deseja sacar?");
+               double saque = aaa.nextDouble();
+               
+               return saldo-saque;
+    }
+
+    private double Depositar(double saldo) {
+               Scanner tcl = new Scanner(System.in);
+               System.out.println("Qual valor deseja depositar?");
+               double deposito = tcl.nextDouble();
+               
+               return saldo + deposito;
+               
+    }
+
+    public static void Sair() {
+               Scanner tcl = new Scanner(System.in);
+               System.out.println("Deseja sair?");
+               System.out.println("Digite 'sim' ou 'nao'");
+               String pergunta = tcl.next();
+               
+               switch(pergunta){
+                   case "sim":
+                       boolean confirmacao = true;
+                       System.exit(0);
+                       
+                 
+               }
+    }
+    }
+    
+
